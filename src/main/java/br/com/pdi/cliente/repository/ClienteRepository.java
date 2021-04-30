@@ -1,5 +1,6 @@
-package br.com.pdi.cliente;
+package br.com.pdi.cliente.repository;
 
+import br.com.pdi.cliente.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

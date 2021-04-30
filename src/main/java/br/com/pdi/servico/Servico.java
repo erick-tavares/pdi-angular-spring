@@ -1,6 +1,6 @@
 package br.com.pdi.servico;
 
-import br.com.pdi.cliente.Cliente;
+import br.com.pdi.cliente.entity.Cliente;
 import lombok.Data;
 
 import javax.persistence.*;
