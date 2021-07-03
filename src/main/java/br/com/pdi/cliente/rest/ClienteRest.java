@@ -7,10 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/clientes")
+@CrossOrigin("*")
 public class ClienteRest {
 
     @Autowired
@@ -35,6 +37,11 @@ public class ClienteRest {
     @PutMapping("{id}")
     public Cliente atualizar (@PathVariable @Validated int id, @RequestBody @Validated Cliente clienteAtualizado){
         return clienteService.update(id, clienteAtualizado);
+    }
+
+    @GetMapping
+    public List<Cliente> buscarTodos (){
+        return clienteService.findAll();
     }
 
 }

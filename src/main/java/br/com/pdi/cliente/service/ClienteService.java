@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -39,5 +40,9 @@ public class ClienteService {
              return clienteAtual;
          }
             throw new IllegalArgumentException(String.format("Id %s não encontrado", id));
+    }
+
+    public List<Cliente> findAll(){
+        return clienteRepository.findAll();
     }
 }
