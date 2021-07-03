@@ -47,4 +47,8 @@ public class ServicoPrestadoService {
     public List<ServicoPrestado> findAll(){
         return servicoPrestadoRepository.findAll();
     }
+
+    public List<ServicoPrestado> buscarPorNomeEMes(String nome, int mes) {
+        return servicoPrestadoRepository.findByNomeClienteAndMes(nome, mes);
+    }
 }
