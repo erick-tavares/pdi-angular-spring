@@ -1,4 +1,4 @@
-package br.com.pdi.cliente.rest.exception;
+package br.com.pdi.exception;
 
 import lombok.Getter;
 
