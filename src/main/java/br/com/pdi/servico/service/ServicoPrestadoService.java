@@ -1,13 +1,10 @@
 package br.com.pdi.servico.service;
 
-import br.com.pdi.cliente.entity.Cliente;
 import br.com.pdi.servico.entity.ServicoPrestado;
 import br.com.pdi.servico.repository.ServicoPrestadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
