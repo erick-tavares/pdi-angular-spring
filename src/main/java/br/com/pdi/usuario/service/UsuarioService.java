@@ -1,5 +1,6 @@
 package br.com.pdi.usuario.service;
 
+import br.com.pdi.exception.NegocioException;
 import br.com.pdi.usuario.entity.Usuario;
 import br.com.pdi.usuario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,13 @@ public class UsuarioService implements UserDetailsService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public void salvar(Usuario usuario){
-        usuarioRepository.save(usuario);
+    public Usuario salvar(Usuario usuario){
+        boolean existe = usuarioRepository.existsByUsername(usuario.getUsername());
+
+        if(existe){
+            throw new NegocioException("Usuário já cadastrado para o login %s " + usuario.getUsername());
+        }
+        return usuarioRepository.save(usuario);
     }
 
     @Override
